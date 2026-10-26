@@ -1,401 +1,511 @@
-
-<!DOCTYPE html>
-<html lang="en">
+<!DOCTYPE html><html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="theme-color" content="#08060d">
-<meta name="description" content="Welcome to Noxveil's personal portfolio — a space for my interests, education, skills and projects.">
-<title>NOXVEIL | Personal Portfolio</title>
-
-<style>
+<meta name="theme-color" content="#08060f">
+<meta name="description" content="NOXVEIL — Student, coding enthusiast, gamer, and aspiring web developer.">
+<title>NOXVEIL | Digital Portfolio</title><style>
 :root {
-  --bg: #08060d;
-  --card: #110d1b;
+  --bg: #08060f;
+  --card: rgba(255,255,255,.045);
   --purple: #a855f7;
-  --light: #d8b4fe;
-  --text: #f5f3fa;
-  --muted: #a5a0b2;
-  --border: rgba(168,85,247,.22);
+  --pink: #e879f9;
+  --text: #f5f3ff;
+  --muted: #aaa3bd;
+  --border: rgba(192,132,252,.2);
 }
 
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  scroll-behavior: smooth;
-}
+* { margin:0; padding:0; box-sizing:border-box; }
+
+html { scroll-behavior:smooth; scroll-padding-top:85px; }
 
 body {
-  background: var(--bg);
-  color: var(--text);
-  font-family: Arial, Helvetica, sans-serif;
-  line-height: 1.7;
-  overflow-x: hidden;
+  background:var(--bg);
+  color:var(--text);
+  font-family:Arial,Helvetica,sans-serif;
+  line-height:1.7;
+  overflow-x:hidden;
 }
 
 body::before {
-  content: "";
-  position: fixed;
-  width: 300px;
-  height: 300px;
-  top: -100px;
-  left: -100px;
-  background: rgba(126,34,206,.18);
-  filter: blur(100px);
-  pointer-events: none;
-  z-index: -1;
+  content:"";
+  position:fixed;
+  inset:0;
+  pointer-events:none;
+  z-index:-1;
+  background:
+    radial-gradient(ellipse at 15% 15%,rgba(126,34,206,.17),transparent 45%),
+    radial-gradient(ellipse at 90% 65%,rgba(168,85,247,.11),transparent 40%);
 }
 
-a {
-  color: inherit;
-  text-decoration: none;
-}
+a { color:inherit; text-decoration:none; }
 
 nav {
-  position: sticky;
-  top: 0;
-  z-index: 10;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  gap: 15px;
-  padding: 15px 7%;
-  background: rgba(8,6,13,.88);
-  backdrop-filter: blur(15px);
-  border-bottom: 1px solid var(--border);
+  position:sticky;
+  top:0;
+  z-index:10;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  gap:12px;
+  padding:15px 7%;
+  background:rgba(8,6,15,.88);
+  backdrop-filter:blur(15px);
+  border-bottom:1px solid var(--border);
 }
 
 .logo {
-  font-size: 23px;
-  font-weight: 900;
-  letter-spacing: 4px;
-  color: var(--light);
+  font-size:23px;
+  font-weight:900;
+  letter-spacing:3px;
+  color:#d8b4fe;
+  text-shadow:0 0 18px #a855f766;
 }
 
-nav a {
-  font-size: 12px;
-  color: var(--muted);
+.navlinks { display:flex; gap:20px; flex-wrap:wrap; }
+
+.navlinks a {
+  font-size:13px;
+  color:var(--muted);
+  transition:.3s;
 }
 
-nav a:hover {
-  color: var(--light);
-}
+.navlinks a:hover { color:var(--pink); }
+
+section { padding:85px 8%; }
 
 .hero {
-  min-height: 85vh;
-  padding: 100px 8% 80px;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: flex-start;
+  min-height:85vh;
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  justify-content:center;
+  text-align:center;
+  position:relative;
 }
 
-.tag {
-  color: var(--light);
-  border: 1px solid var(--border);
-  background: rgba(168,85,247,.08);
-  padding: 5px 13px;
-  border-radius: 30px;
-  font-size: 12px;
-  letter-spacing: 2px;
+.badge {
+  border:1px solid var(--border);
+  border-radius:30px;
+  padding:6px 15px;
+  color:#d8b4fe;
+  font-size:12px;
+  letter-spacing:2px;
+  margin-bottom:23px;
+  background:#a855f710;
 }
 
 .hero h1 {
-  font-size: clamp(48px, 11vw, 90px);
-  line-height: 1.15;
-  margin: 24px 0 12px;
-  letter-spacing: -3px;
+  font-size:clamp(48px,12vw,100px);
+  font-weight:900;
+  letter-spacing:5px;
+  line-height:1.15;
+  background:linear-gradient(100deg,#fff,#c084fc,#e879f9,#fff);
+  background-size:250% auto;
+  color:transparent;
+  background-clip:text;
+  -webkit-background-clip:text;
+  animation:shine 6s linear infinite;
 }
 
-.gradient {
-  background: linear-gradient(90deg,#c084fc,#8b5cf6,#e9d5ff);
-  -webkit-background-clip: text;
-  background-clip: text;
-  color: transparent;
+@keyframes shine {
+  to { background-position:250% center; }
 }
+
+.hero h2 {
+  margin-top:18px;
+  font-size:clamp(17px,4vw,25px);
+  font-weight:500;
+}
+
+#typing { color:#d8b4fe; }
+
+.cursor {
+  display:inline-block;
+  color:var(--pink);
+  animation:blink .8s steps(2) infinite;
+}
+
+@keyframes blink { 50% { opacity:0; } }
 
 .hero p {
-  max-width: 550px;
-  color: var(--muted);
-  font-size: 16px;
+  color:var(--muted);
+  max-width:580px;
+  margin:20px auto 28px;
 }
 
 .buttons {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 12px;
-  margin-top: 28px;
+  display:flex;
+  gap:14px;
+  flex-wrap:wrap;
+  justify-content:center;
 }
 
 .btn {
-  display: inline-block;
-  padding: 10px 20px;
-  border-radius: 8px;
-  border: 1px solid var(--border);
-  font-size: 14px;
-  transition: .25s;
+  padding:12px 22px;
+  border:1px solid var(--border);
+  border-radius:9px;
+  font-weight:bold;
+  font-size:14px;
+  transition:.25s;
 }
 
 .btn.primary {
-  background: #9333ea;
-  color: white;
+  color:white;
+  background:linear-gradient(120deg,#7e22ce,#a855f7);
+  box-shadow:0 0 25px #9333ea35;
 }
 
 .btn:hover {
-  transform: translateY(-3px);
-  box-shadow: 0 0 22px rgba(168,85,247,.25);
-}
-
-section {
-  padding: 65px 8%;
-  scroll-margin-top: 65px;
+  transform:translateY(-3px);
+  box-shadow:0 0 24px #a855f744;
 }
 
 .section-label {
-  color: var(--purple);
-  font-size: 12px;
-  letter-spacing: 3px;
-  text-transform: uppercase;
+  color:var(--pink);
+  text-transform:uppercase;
+  font-size:12px;
+  letter-spacing:3px;
+  margin-bottom:8px;
 }
 
-section h2 {
-  font-size: clamp(28px,6vw,42px);
-  margin: 8px 0 28px;
+.section-title {
+  font-size:clamp(29px,6vw,43px);
+  line-height:1.3;
+  margin-bottom:18px;
 }
 
-.about-text {
-  color: var(--muted);
-  max-width: 720px;
+.intro {
+  max-width:720px;
+  color:var(--muted);
 }
 
 .grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit,minmax(210px,1fr));
-  gap: 16px;
+  display:grid;
+  grid-template-columns:repeat(3,minmax(0,1fr));
+  gap:18px;
+  margin-top:30px;
 }
 
 .card {
-  background: linear-gradient(145deg,rgba(23,15,36,.95),rgba(12,9,19,.95));
-  border: 1px solid var(--border);
-  border-radius: 14px;
-  padding: 23px;
-  transition: .3s;
+  background:var(--card);
+  border:1px solid var(--border);
+  border-radius:16px;
+  padding:24px;
+  transition:transform .3s,border-color .3s,background .3s;
+  animation:fadeup .7s both;
 }
 
 .card:hover {
-  transform: translateY(-5px);
-  border-color: var(--purple);
-  box-shadow: 0 10px 35px rgba(126,34,206,.1);
+  transform:translateY(-6px);
+  border-color:#c084fc88;
+  background:rgba(168,85,247,.08);
 }
 
-.icon {
-  font-size: 27px;
+.card .icon { font-size:28px; margin-bottom:12px; }
+
+.card h3 { font-size:18px; margin-bottom:8px; }
+
+.card p { color:var(--muted); font-size:14px; }
+
+.tags { display:flex; flex-wrap:wrap; gap:10px; margin-top:22px; }
+
+.tag {
+  border:1px solid var(--border);
+  background:#a855f710;
+  color:#e9d5ff;
+  border-radius:8px;
+  padding:7px 12px;
+  font-size:13px;
 }
 
-.card h3 {
-  margin: 10px 0 5px;
-  font-size: 18px;
+.timeline {
+  margin-top:28px;
+  padding:25px;
+  border-left:2px solid var(--purple);
+  background:var(--card);
+  border-radius:0 14px 14px 0;
 }
 
-.card p {
-  color: var(--muted);
-  font-size: 14px;
-}
+.timeline p { color:var(--muted); margin-top:7px; }
 
-.pill {
-  display: inline-block;
-  color: var(--light);
-  border: 1px solid var(--border);
-  padding: 5px 12px;
-  margin: 5px 4px 5px 0;
-  border-radius: 6px;
-  font-size: 13px;
-}
-
-.goal {
-  border-left: 3px solid var(--purple);
-  padding: 5px 0 5px 20px;
-  color: var(--muted);
+.project-link {
+  display:inline-block;
+  margin-top:17px;
+  color:#d8b4fe;
+  font-size:14px;
+  font-weight:bold;
 }
 
 .contact-box {
-  background: radial-gradient(ellipse at top,rgba(126,34,206,.15),transparent 70%);
-  border: 1px solid var(--border);
-  border-radius: 18px;
-  padding: 30px 20px;
-  text-align: center;
+  text-align:center;
+  border:1px solid var(--border);
+  border-radius:20px;
+  padding:45px 22px;
+  background:linear-gradient(140deg,#a855f711,#e879f908);
 }
 
 footer {
-  text-align: center;
-  padding: 25px 15px;
-  border-top: 1px solid var(--border);
-  color: var(--muted);
-  font-size: 12px;
+  border-top:1px solid var(--border);
+  padding:25px 15px;
+  text-align:center;
+  color:var(--muted);
+  font-size:13px;
 }
 
 .reveal {
-  animation: appear .8s ease both;
+  opacity:0;
+  transform:translateY(22px);
+  transition:opacity .7s,transform .7s;
 }
 
-@keyframes appear {
-  from { opacity: 0; transform: translateY(18px); }
-  to { opacity: 1; transform: translateY(0); }
+.reveal.show { opacity:1; transform:translateY(0); }
+
+#particles {
+  position:fixed;
+  inset:0;
+  pointer-events:none;
+  z-index:-1;
+  overflow:hidden;
 }
 
-@media(max-width:600px) {
-  nav { padding: 13px 5%; }
-  .logo { font-size: 19px; }
-  nav a { font-size: 11px; }
-  .hero { min-height: 78vh; padding: 75px 7%; }
-  section { padding: 50px 7%; }
-  .hero h1 { letter-spacing: -2px; }
+.particle {
+  position:absolute;
+  bottom:-15px;
+  width:3px;
+  height:3px;
+  border-radius:50%;
+  background:#c084fc;
+  box-shadow:0 0 10px #a855f7;
+  animation:float linear infinite;
 }
-</style>
-</head>
 
-<body>
+@keyframes float {
+  from { transform:translateY(0); opacity:0; }
+  15% { opacity:.7; }
+  85% { opacity:.4; }
+  to { transform:translateY(-110vh); opacity:0; }
+}
 
-<nav>
-  <a class="logo" href="#home">NOXVEIL.</a>
-  <a href="#about">ABOUT</a>
-  <a href="#education">STUDIES</a>
-  <a href="#hobbies">HOBBIES</a>
-  <a href="#projects">PROJECTS</a>
-</nav>
+@keyframes fadeup {
+  from { opacity:0; transform:translateY(15px); }
+  to { opacity:1; transform:translateY(0); }
+}
 
-<header class="hero reveal" id="home">
-  <span class="tag">✦ PERSONAL PORTFOLIO</span>
-  <h1>I'm <span class="gradient">Noxveil.</span></h1>
+@media(max-width:760px) {
+  nav { padding:13px 5%; align-items:flex-start; }
+  .logo { font-size:19px; }
+  .navlinks { gap:8px 12px; justify-content:flex-end; }
+  .navlinks a { font-size:11px; }
+  section { padding:65px 6%; }
+  .grid { grid-template-columns:repeat(2,minmax(0,1fr)); gap:12px; }
+  .card { padding:18px; }
+}
+
+@media(max-width:430px) {
+  nav { flex-direction:column; align-items:center; }
+  .navlinks { justify-content:center; }
+  .grid { grid-template-columns:1fr; }
+  .hero h1 { letter-spacing:2px; }
+}
+
+@media(prefers-reduced-motion:reduce) {
+  *,*::before,*::after {
+    animation-duration:.01ms !important;
+    animation-iteration-count:1 !important;
+    scroll-behavior:auto !important;
+    transition-duration:.01ms !important;
+  }
+}
+</style></head><body>
+<div id="particles" aria-hidden="true"></div><nav>
+  <a class="logo" href="#home">NOXVEIL</a>
+  <div class="navlinks">
+    <a href="#about">About</a>
+    <a href="#education">Education</a>
+    <a href="#skills">Skills</a>
+    <a href="#interests">Interests</a>
+    <a href="#projects">Projects</a>
+    <a href="#contact">Contact</a>
+  </div>
+</nav><main>
+<section class="hero" id="home">
+  <div class="badge">WELCOME TO MY DIGITAL WORLD</div>
+  <h1>NOXVEIL</h1>
+  <h2>I'm a <span id="typing">Student</span><span class="cursor">|</span></h2>
   <p>
-    A curious mind exploring technology, creativity and the digital world.
-    This is my little corner of the internet, where my journey begins.
+    Exploring code, technology, and creativity.
+    Learning today, building tomorrow.
+    Welcome to my corner of the internet.
   </p>
   <div class="buttons">
     <a class="btn primary" href="#about">Discover My World ↗</a>
     <a class="btn" href="#projects">Explore Projects</a>
   </div>
-</header>
-
-<section id="about">
-  <div class="section-label">01 / INTRODUCTION</div>
-  <h2>About <span class="gradient">Me.</span></h2>
-  <p class="about-text">
-    Hey! I'm Noxveil. I enjoy discovering new things, learning useful skills
-    and expressing my creativity through technology. I'm building my knowledge
-    one step at a time, exploring new ideas and turning them into projects.
-    This website is where I share my interests, education and progress.
+</section><section id="about" class="reveal">
+  <div class="section-label">01 / About</div>
+  <h2 class="section-title">A little about me.</h2>
+  <p class="intro">
+    I'm NOXVEIL, a Class 12 student interested in web development,
+    gaming, music, and technology. I enjoy learning new things,
+    experimenting with code, and turning ideas into digital
+    experiences. I'm at the beginning of my journey, and every
+    project is a chance to improve.
   </p>
-</section>
-
-<section id="education">
-  <div class="section-label">02 / MY JOURNEY</div>
-  <h2>My <span class="gradient">Education.</span></h2>
+</section><section id="education" class="reveal">
+  <div class="section-label">02 / Education</div>
+  <h2 class="section-title">Learning & growing.</h2>
+  <div class="timeline">
+    <div class="tag">CURRENTLY STUDYING</div>
+    <h3 style="margin-top:14px">Class 12</h3>
+    <p>Building my academic foundation while exploring coding and web development in my free time.</p>
+  </div>
+</section><section id="skills" class="reveal">
+  <div class="section-label">03 / Skills</div>
+  <h2 class="section-title">Things I'm learning.</h2>
+  <p class="intro">My current web-development learning path.</p>
   <div class="grid">
     <article class="card">
-      <div class="icon">🎓</div>
-      <h3>Current Studies</h3>
-      <p>I'm currently studying. I'll update this section with my class,
-      subjects and academic journey.</p>
+      <div class="icon">🌐</div>
+      <h3>HTML</h3>
+      <p>Creating the structure and content of web pages.</p>
     </article>
     <article class="card">
-      <div class="icon">📚</div>
-      <h3>Always Learning</h3>
-      <p>Exploring new concepts, improving my knowledge and developing
-      skills beyond the classroom.</p>
+      <div class="icon">🎨</div>
+      <h3>CSS</h3>
+      <p>Designing layouts, responsive pages, and visual effects.</p>
+    </article>
+    <article class="card">
+      <div class="icon">⚡</div>
+      <h3>JavaScript</h3>
+      <p>Learning to make websites interactive and dynamic.</p>
     </article>
   </div>
-</section>
-
-<section id="hobbies">
-  <div class="section-label">03 / OUTSIDE THE CLASSROOM</div>
-  <h2>My <span class="gradient">Interests.</span></h2>
+  <div class="tags">
+    <span class="tag">Creative Thinking</span>
+    <span class="tag">Problem Solving</span>
+    <span class="tag">Continuous Learning</span>
+  </div>
+</section><section id="interests" class="reveal">
+  <div class="section-label">04 / Interests</div>
+  <h2 class="section-title">Beyond the screen.</h2>
   <div class="grid">
     <article class="card">
       <div class="icon">🎮</div>
       <h3>Gaming</h3>
-      <p>Exploring virtual worlds, improving strategies and enjoying games.</p>
+      <p>Enjoying games, exploring virtual worlds, and learning new strategies.</p>
     </article>
     <article class="card">
       <div class="icon">💻</div>
-      <h3>Technology</h3>
-      <p>Discovering websites, apps, coding and the world of technology.</p>
+      <h3>Coding</h3>
+      <p>Experimenting with websites and discovering how technology works.</p>
     </article>
     <article class="card">
       <div class="icon">🎧</div>
       <h3>Music</h3>
-      <p>Enjoying music, discovering new sounds and finding inspiration.</p>
-    </article>
-    <article class="card">
-      <div class="icon">🎬</div>
-      <h3>Creativity</h3>
-      <p>Exploring digital design, editing and creative ideas.</p>
-    </article>
-  </div>
-</section>
-
-<section id="skills">
-  <div class="section-label">04 / WHAT I'M LEARNING</div>
-  <h2>My <span class="gradient">Skills.</span></h2>
-  <p class="about-text">These are skills I'm interested in learning and improving.</p>
-  <br>
-  <span class="pill">HTML</span>
-  <span class="pill">CSS</span>
-  <span class="pill">JavaScript</span>
-  <span class="pill">Web Design</span>
-  <span class="pill">Creative Editing</span>
-  <span class="pill">Problem Solving</span>
-</section>
-
-<section id="projects">
-  <div class="section-label">05 / THINGS I'M BUILDING</div>
-  <h2>My <span class="gradient">Projects.</span></h2>
-  <div class="grid">
-    <article class="card">
-      <div class="icon">🌐</div>
-      <h3>Personal Website</h3>
-      <p>This portfolio — my first step toward building my own space on the web.</p>
-      <br>
-      <a class="btn" href="https://github.com/" target="_blank" rel="noopener">Explore GitHub ↗</a>
+      <p>Enjoying music while relaxing, learning, or working on creative ideas.</p>
     </article>
     <article class="card">
       <div class="icon">🚀</div>
-      <h3>More Coming Soon</h3>
-      <p>New ideas, experiments and projects will be added as I continue learning.</p>
+      <h3>Technology</h3>
+      <p>Exploring new digital tools, software, and creative possibilities.</p>
     </article>
   </div>
-</section>
-
-<section id="goals">
-  <div class="section-label">06 / THE FUTURE</div>
-  <h2>My <span class="gradient">Goals.</span></h2>
-  <div class="goal">
-    Keep learning, build useful projects, strengthen my technical skills
-    and turn creative ideas into reality.
+</section><section id="projects" class="reveal">
+  <div class="section-label">05 / Projects</div>
+  <h2 class="section-title">Building my journey.</h2>
+  <div class="grid">
+    <article class="card">
+      <div class="icon">🌌</div>
+      <h3>NOXVEIL Portfolio</h3>
+      <p>A personal website made with HTML, CSS, and JavaScript to showcase my learning journey.</p>
+      <a class="project-link" href="https://github.com/noxveilx/noxveilx.github.io" target="_blank" rel="noopener noreferrer">View on GitHub ↗</a>
+    </article>
+    <article class="card">
+      <div class="icon">🧪</div>
+      <h3>Future Experiment</h3>
+      <p>A space for my next coding experiment. More projects will be added as I build them.</p>
+    </article>
   </div>
-</section>
-
-<section id="contact">
+</section><section id="goals" class="reveal">
+  <div class="section-label">06 / Future Goals</div>
+  <h2 class="section-title">The vision.</h2>
+  <p class="intro">
+    My goal is to become a skilled web developer or software engineer.
+    I want to strengthen my coding skills, create useful digital
+    products, and keep learning one project at a time.
+  </p>
+</section><section id="contact" class="reveal">
   <div class="contact-box">
-    <div class="section-label">07 / SAY HELLO</div>
-    <h2>Let's connect.</h2>
-    <p class="about-text" style="margin:0 auto 20px">
-      Follow my journey and explore the things I create.
+    <div class="section-label">07 / Connect</div>
+    <h2 class="section-title">Let's build something.</h2>
+    <p class="intro" style="margin:0 auto 25px">
+      Check out my coding journey and future projects on GitHub.
     </p>
-    <a class="btn primary" href="https://github.com/noxveilx"
-       target="_blank" rel="noopener">My GitHub Profile ↗</a>
+    <a class="btn primary" href="https://github.com/noxveilx" target="_blank" rel="noopener noreferrer">Visit My GitHub ↗</a>
   </div>
 </section>
+</main><footer>
+  <p>© <span id="year"></span> NOXVEIL · Built with curiosity and code.</p>
+</footer><script>
+const words = ["Student", "Coder", "Gamer", "Future Web Developer"];
+const typing = document.getElementById("typing");
+let wordIndex = 0;
+let charIndex = 0;
+let deleting = false;
 
-<footer>
-  <p>© <span id="year"></span> NOXVEIL · Built with curiosity.</p>
-  <p>Learning today. Building tomorrow.</p>
-</footer>
+function typeEffect() {
+  const word = words[wordIndex];
 
-<script>
+  if (!deleting) {
+    charIndex++;
+    typing.textContent = word.slice(0, charIndex);
+
+    if (charIndex === word.length) {
+      deleting = true;
+      setTimeout(typeEffect, 1200);
+      return;
+    }
+  } else {
+    charIndex--;
+    typing.textContent = word.slice(0, charIndex);
+
+    if (charIndex === 0) {
+      deleting = false;
+      wordIndex = (wordIndex + 1) % words.length;
+    }
+  }
+
+  setTimeout(typeEffect, deleting ? 45 : 95);
+}
+
+typeEffect();
+
+const revealObserver = new IntersectionObserver(entries => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add("show");
+      revealObserver.unobserve(entry.target);
+    }
+  });
+}, { threshold: 0.12 });
+
+document.querySelectorAll(".reveal").forEach(element => {
+  revealObserver.observe(element);
+});
+
 document.getElementById("year").textContent = new Date().getFullYear();
-</script>
 
-</body>
+const particleContainer = document.getElementById("particles");
+
+for (let i = 0; i < 22; i++) {
+  const particle = document.createElement("span");
+  particle.className = "particle";
+  particle.style.left = Math.random() * 100 + "%";
+  particle.style.animationDuration = (9 + Math.random() * 14) + "s";
+  particle.style.animationDelay = (-Math.random() * 20) + "s";
+  particle.style.opacity = (0.2 + Math.random() * 0.6).toString();
+  particleContainer.appendChild(particle);
+}
+</script></body>
   </html>
